@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">DriveTime</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_personal_details">Personal Details</string>
+    <string name="title_activity_compare">CompareActivity</string>
+    <string name="title_activity_chosen">ChosenActivity</string>
+    <string name="title_activity_login_payment">LoginPaymentActivity</string>
+    <string name="facebook_app_id">347376965458827</string>
+
+    
+    <style name="Button_text">
+    <item name="android:layout_marginLeft">10dp</item>
+    <item name="android:layout_marginRight">10dp</item>
+    <item name="android:layout_marginTop">10dp</item>
+    <item name="android:gravity">center</item>
+    <item name="android:textColor">#EEE9E9</item>
+</style>
+
+
+    <style name="Button_text_2">
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">#E8E8E8</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+</resources>

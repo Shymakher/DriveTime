@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="The chosen deal details"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:typeface="serif" >
+        </TextView>
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/TextView01"
+            android:layout_weight="1"
+            android:text="Characteristic"
+            android:textStyle="bold">
+        </TextView>
+
+        <TextView
+            android:id="@+id/TextView02"
+            android:text="Details"
+            android:layout_weight="2"
+            android:textStyle="bold"
+            android:typeface="normal" >
+        </TextView>
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:layout_weight="1"
+            android:id="@+id/textView11"
+            android:text="Date"
+            android:textStyle="normal" >
+        </TextView>
+
+        <TextView
+            android:layout_weight="2"
+            android:id="@+id/textView12">
+        </TextView>
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:layout_weight="1"
+            android:id="@+id/textView21"
+            android:text="Time"
+            android:textStyle="normal" >
+        </TextView>
+
+        <TextView
+            android:layout_weight="2"
+            android:id="@+id/textView22">
+        </TextView>
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow13"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:layout_weight="1"
+            android:id="@+id/textView201"
+            android:text="Age"
+            android:textStyle="normal" >
+        </TextView>
+
+        <TextView
+            android:layout_weight="2"
+            android:id="@+id/textView202">
+        </TextView>
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:layout_weight="1"
+            android:id="@+id/textView31"
+            android:text="New driver"
+            android:textStyle="normal" >
+        </TextView>
+
+        <TextView
+            android:layout_weight="2"
+            android:id="@+id/textView32">
+        </TextView>
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:layout_weight="1"
+            android:id="@+id/textView41"
+            android:text="Car manufacture"
+            android:textStyle="normal" >
+        </TextView>
+
+        <TextView
+            android:layout_weight="2"
+            android:id="@+id/textView42">
+        </TextView>
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:layout_weight="1"
+            android:id="@+id/textView51"
+            android:text="Private or company use"
+            android:textStyle="normal" >
+        </TextView>
+
+        <TextView
+            android:layout_weight="2"
+            android:id="@+id/textView52">
+        </TextView>
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:layout_weight="1"
+            android:id="@+id/textView61"
+            android:text="Did you  have insurance before"
+            android:textStyle="normal" >
+        </TextView>
+
+        <TextView
+            android:layout_weight="2"
+            android:id="@+id/textView62">
+        </TextView>
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:layout_weight="1"
+            android:id="@+id/textView71"
+            android:text="Claims for the insurance before"
+            android:textStyle="normal" >
+        </TextView>
+
+        <TextView
+            android:layout_weight="2"
+            android:id="@+id/textView72">
+        </TextView>
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:layout_weight="1"
+            android:id="@+id/textView81"
+            android:text="Problem with police"
+            android:textStyle="normal" >
+        </TextView>
+
+        <TextView
+            android:layout_weight="2"
+            android:id="@+id/textView82">
+        </TextView>
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:layout_weight="1"
+            android:id="@+id/textView91"
+            android:text="State"
+            android:textStyle="normal" >
+        </TextView>
+
+        <TextView
+            android:layout_weight="2"
+            android:id="@+id/textView92">
+        </TextView>
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:layout_weight="1"
+            android:id="@+id/textView101"
+            android:text="City"
+            android:textStyle="normal" >
+        </TextView>
+
+        <TextView
+            android:layout_weight="2"
+            android:id="@+id/textView102">
+        </TextView>
+    </TableRow>
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Confirm deal"
+        android:id="@+id/confirm"
+        android:onClick="confirm"
+        android:layout_column="0" />
+
+</TableLayout>

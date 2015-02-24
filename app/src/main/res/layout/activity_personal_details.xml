@@ -1,0 +1,232 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.drivetime.drivetime.PersonalDetailsActivity"
+    >
+
+
+
+
+    <ScrollView android:id="@+id/ScrlView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/bgrnd_two_act"
+        >
+
+        <LinearLayout android:id="@+id/layoutForScroll" android:orientation="vertical"
+            android:layout_width="fill_parent" android:layout_height="wrap_content"
+
+            >
+
+            <TextView
+                android:textColor="#FFE4B5"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Choose date &amp; hours for the next insurance deal"
+                android:id="@+id/data_hours"
+                android:layout_gravity="center_horizontal"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center_horizontal"
+                android:weightSum="100">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="date"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Date"
+                    android:id="@+id/dateButton"
+                    android:background="@drawable/selector_data"
+                    style="@style/Button_text" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_horizontal"
+                    android:onClick="time"
+                    android:text="Time"
+                    android:id="@+id/timeButton"
+                    android:background="@drawable/selector_time"
+                    style="@style/Button_text" />
+            </LinearLayout>
+
+            <TextView
+                android:textColor="#FFE4B5"
+                android:layout_marginTop="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Driver age:"
+                android:id="@+id/driver_age"
+                android:layout_gravity="center_horizontal" />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinnerAge"
+                style="@android:style/Widget.Holo.Light.Spinner"
+                android:spinnerStyle="@android:style/Widget.Spinner.DropDown"
+                />
+
+
+            <TextView
+                android:textColor="#FFE4B5"
+                android:layout_marginTop="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New driver: yes/no"
+                android:id="@+id/textView"
+                android:layout_gravity="center_horizontal"/>
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinnerNewDriver"
+                style="@android:style/Widget.Holo.Light.Spinner"
+                android:spinnerStyle="@android:style/Widget.Spinner.DropDown"/>
+
+            <TextView
+                android:textColor="#FFE4B5"
+                android:layout_marginTop="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Car manufacture"
+                android:id="@+id/textView2"
+                android:layout_gravity="center_horizontal"/>
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinnerCars"
+                android:spinnerStyle="@android:style/Widget.Spinner.DropDown"
+                style="@android:style/Widget.Holo.Light.Spinner"/>
+
+            <TextView
+                android:textColor="#FFE4B5"
+                android:layout_marginTop="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Private or company use"
+                android:id="@+id/textView3"
+                android:layout_gravity="center_horizontal"/>
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinnerIfPrivate"
+                android:spinnerStyle="@android:style/Widget.Spinner.DropDown"
+                style="@android:style/Widget.Holo.Light.Spinner"/>
+
+            <TextView
+                android:textColor="#FFE4B5"
+                android:layout_marginTop="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Did you have a car insurance before yes/no"
+                android:id="@+id/textView4"
+                android:layout_gravity="center_horizontal"/>
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinnerBefore"
+                style="@android:style/Widget.Holo.Light.Spinner"
+                android:spinnerStyle="@android:style/Widget.Spinner.DropDown"/>
+
+
+            <TextView
+                android:textColor="#FFE4B5"
+                android:layout_marginTop="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Did you have any claims for the insurance in the past yes/no"
+                android:id="@+id/textView5"
+                android:layout_gravity="center_horizontal"/>
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinnerClaims"
+                style="@android:style/Widget.Holo.Light.Spinner"
+                android:spinnerStyle="@android:style/Widget.Spinner.DropDown"/>
+
+            <TextView
+                android:textColor="#FFE4B5"
+                android:layout_marginTop="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Did your driver licence was ever canceled by the police yes/no"
+                android:id="@+id/textView6"
+                android:layout_gravity="center_horizontal"/>
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinnerPolice"
+                style="@android:style/Widget.Holo.Light.Spinner"
+                android:spinnerStyle="@android:style/Widget.Spinner.DropDown"/>
+
+            <TextView
+                android:textColor="#FFE4B5"
+                android:layout_marginTop="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="State"
+                android:id="@+id/textView7"
+                android:layout_gravity="center_horizontal"/>
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinnerState"
+                style="@android:style/Widget.Holo.Light.Spinner"
+                android:spinnerStyle="@android:style/Widget.Spinner.DropDown"/>
+
+            <TextView
+                android:textColor="#FFE4B5"
+                android:layout_marginTop="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="City"
+                android:id="@+id/textView8"
+                android:layout_gravity="center_horizontal"/>
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinnerCity"
+                style="@android:style/Widget.Holo.Light.Spinner"/>
+
+            <CheckBox
+                android:textColor="#FFE4B5"
+                android:layout_marginTop="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="I agree to terms and conditions"
+                android:onClick="itemClicked"
+                android:id="@+id/checkBox"/>
+
+            <Button
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/selector_spinner"
+                android:text="Get a deal offer now"
+                android:onClick="dealOffer"
+                android:id="@+id/deal_offer"
+                style="@style/Button_text_2"
+                />
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
