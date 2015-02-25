@@ -3,6 +3,7 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="homeAsUpIndicator">@drawable/up_button</item>
+        <item name="android:icon">@drawable/ic_launcher</item>
     </style>
 
 </resources>

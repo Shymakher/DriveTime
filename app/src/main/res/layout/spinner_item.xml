@@ -6,8 +6,8 @@
         android:layout_height="wrap_content"
         android:padding="5dp"
         android:textSize="18dp"
-        android:gravity="left"
-        android:textColor="#FFFAFA"
+        android:gravity="center_horizontal"
+        android:textColor="#ffc1bcbc"
         android:background="@drawable/spinner_top_fon"
         />
 

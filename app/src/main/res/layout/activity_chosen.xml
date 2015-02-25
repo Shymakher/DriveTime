@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@drawable/bgrnd_two_act">
 
     <TableRow
         android:id="@+id/tableRow1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal" >
+        android:gravity="center_horizontal"
+        android:background="@drawable/list_fon">
 
         <TextView
             android:id="@+id/textView1"
@@ -15,21 +17,24 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="The chosen deal details"
-            android:textSize="18dp"
+            android:textSize="21sp"
             android:textStyle="bold"
-            android:typeface="serif" >
+            android:textColor="#ffdaded0"
+            android:typeface="serif"
+            android:layout_marginBottom="5dp">
         </TextView>
     </TableRow>
 
     <TableRow
         android:id="@+id/tableRow2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/TextView01"
             android:layout_weight="1"
             android:text="Characteristic"
+            android:textColor="#FFE4B5"
             android:textStyle="bold">
         </TextView>
 
@@ -38,6 +43,7 @@
             android:text="Details"
             android:layout_weight="2"
             android:textStyle="bold"
+            android:textColor="#FFE4B5"
             android:typeface="normal" >
         </TextView>
     </TableRow>
@@ -45,17 +51,20 @@
     <TableRow
         android:id="@+id/tableRow3"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:background="@drawable/list_fon">
 
         <TextView
             android:layout_weight="1"
             android:id="@+id/textView11"
             android:text="Date"
+            android:textColor="#ffdaded0"
             android:textStyle="normal" >
         </TextView>
 
         <TextView
             android:layout_weight="2"
+            android:textColor="#ffdaded0"
             android:id="@+id/textView12">
         </TextView>
     </TableRow>
@@ -63,17 +72,19 @@
     <TableRow
         android:id="@+id/tableRow4"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content">
 
         <TextView
             android:layout_weight="1"
             android:id="@+id/textView21"
+            android:textColor="#ffdaded0"
             android:text="Time"
             android:textStyle="normal" >
         </TextView>
 
         <TextView
             android:layout_weight="2"
+            android:textColor="#ffdaded0"
             android:id="@+id/textView22">
         </TextView>
     </TableRow>
@@ -81,17 +92,20 @@
     <TableRow
         android:id="@+id/tableRow13"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:background="@drawable/list_fon">
 
         <TextView
             android:layout_weight="1"
             android:id="@+id/textView201"
+            android:textColor="#ffdaded0"
             android:text="Age"
             android:textStyle="normal" >
         </TextView>
 
         <TextView
             android:layout_weight="2"
+            android:textColor="#ffdaded0"
             android:id="@+id/textView202">
         </TextView>
     </TableRow>
@@ -99,17 +113,19 @@
     <TableRow
         android:id="@+id/tableRow5"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content">
 
         <TextView
             android:layout_weight="1"
             android:id="@+id/textView31"
             android:text="New driver"
+            android:textColor="#ffdaded0"
             android:textStyle="normal" >
         </TextView>
 
         <TextView
             android:layout_weight="2"
+            android:textColor="#ffdaded0"
             android:id="@+id/textView32">
         </TextView>
     </TableRow>
@@ -117,17 +133,20 @@
     <TableRow
         android:id="@+id/tableRow6"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:background="@drawable/list_fon">
 
         <TextView
             android:layout_weight="1"
             android:id="@+id/textView41"
+            android:textColor="#ffdaded0"
             android:text="Car manufacture"
             android:textStyle="normal" >
         </TextView>
 
         <TextView
             android:layout_weight="2"
+            android:textColor="#ffdaded0"
             android:id="@+id/textView42">
         </TextView>
     </TableRow>
@@ -135,17 +154,19 @@
     <TableRow
         android:id="@+id/tableRow7"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content">
 
         <TextView
             android:layout_weight="1"
             android:id="@+id/textView51"
+            android:textColor="#ffdaded0"
             android:text="Private or company use"
             android:textStyle="normal" >
         </TextView>
 
         <TextView
             android:layout_weight="2"
+            android:textColor="#ffdaded0"
             android:id="@+id/textView52">
         </TextView>
     </TableRow>
@@ -153,17 +174,20 @@
     <TableRow
         android:id="@+id/tableRow8"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:background="@drawable/list_fon">
 
         <TextView
             android:layout_weight="1"
             android:id="@+id/textView61"
+            android:textColor="#ffdaded0"
             android:text="Did you  have insurance before"
             android:textStyle="normal" >
         </TextView>
 
         <TextView
             android:layout_weight="2"
+            android:textColor="#ffdaded0"
             android:id="@+id/textView62">
         </TextView>
     </TableRow>
@@ -171,17 +195,19 @@
     <TableRow
         android:id="@+id/tableRow9"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content">
 
         <TextView
             android:layout_weight="1"
             android:id="@+id/textView71"
+            android:textColor="#ffdaded0"
             android:text="Claims for the insurance before"
             android:textStyle="normal" >
         </TextView>
 
         <TextView
             android:layout_weight="2"
+            android:textColor="#ffdaded0"
             android:id="@+id/textView72">
         </TextView>
     </TableRow>
@@ -189,17 +215,20 @@
     <TableRow
         android:id="@+id/tableRow10"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:background="@drawable/list_fon">
 
         <TextView
             android:layout_weight="1"
             android:id="@+id/textView81"
+            android:textColor="#ffdaded0"
             android:text="Problem with police"
             android:textStyle="normal" >
         </TextView>
 
         <TextView
             android:layout_weight="2"
+            android:textColor="#ffdaded0"
             android:id="@+id/textView82">
         </TextView>
     </TableRow>
@@ -207,17 +236,19 @@
     <TableRow
         android:id="@+id/tableRow11"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content">
 
         <TextView
             android:layout_weight="1"
             android:id="@+id/textView91"
+            android:textColor="#ffdaded0"
             android:text="State"
             android:textStyle="normal" >
         </TextView>
 
         <TextView
             android:layout_weight="2"
+            android:textColor="#ffdaded0"
             android:id="@+id/textView92">
         </TextView>
     </TableRow>
@@ -225,17 +256,20 @@
     <TableRow
         android:id="@+id/tableRow12"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:background="@drawable/list_fon">
 
         <TextView
             android:layout_weight="1"
             android:id="@+id/textView101"
+            android:textColor="#ffdaded0"
             android:text="City"
             android:textStyle="normal" >
         </TextView>
 
         <TextView
             android:layout_weight="2"
+            android:textColor="#ffdaded0"
             android:id="@+id/textView102">
         </TextView>
     </TableRow>
@@ -247,6 +281,7 @@
         android:text="Confirm deal"
         android:id="@+id/confirm"
         android:onClick="confirm"
-        android:layout_column="0" />
+        android:layout_column="0"
+        android:layout_gravity="center_horizontal" />
 
 </TableLayout>
