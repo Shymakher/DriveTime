@@ -12,9 +12,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/switch1"
         android:onClick="switcher"
+        android:checked="false"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:checked="false" />
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:layout_width="wrap_content"

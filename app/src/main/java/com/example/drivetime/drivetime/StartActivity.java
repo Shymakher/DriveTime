@@ -81,7 +81,7 @@ public class StartActivity extends ActionBarActivity {
     public void start(View view) {
         timer = new CountDownTimer(genTime * 1000, 1000) {
             @Override
-            public void onTick(long millisUntilFinished) {
+            public void onTick(long millisUntilFinished) {   
                 long millis = millisUntilFinished;
                 String hms = String.format("%02d:%02d:%02d", TimeUnit.MILLISECONDS.toHours(millis),
                         TimeUnit.MILLISECONDS.toMinutes(millis) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(millis)),
