@@ -28,7 +28,7 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.facebook.LoginActivity"/>
+        <activity android:name="com.facebook.LoginActivity" />
         <activity
             android:name=".IntroductionActivity"
             android:label="@string/app_name" >
@@ -45,7 +45,7 @@
         <activity
             android:name=".CompareActivity"
             android:label="@string/title_activity_compare"
-            android:parentActivityName="com.example.drivetime.drivetime.PersonalDetailsActivity">
+            android:parentActivityName=".PersonalDetailsActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.drivetime.drivetime.PersonalDetailsActivity" />
@@ -62,6 +62,10 @@
         <activity
             android:name=".LoginPaymentActivity"
             android:label="@string/title_activity_login_payment" >
+        </activity>
+        <activity
+            android:name=".StartActivity"
+            android:label="@string/title_activity_start" >
         </activity>
     </application>
 

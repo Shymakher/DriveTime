@@ -23,4 +23,62 @@
         android:layout_margin="10dp"
         android:textSize="16sp" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Credit Card Details:"
+        android:id="@+id/textView9"
+        android:textSize="20dp"
+        android:textColor="#ff060606" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editNumCard"
+        android:hint="Enter credit card number" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editCVV"
+        android:hint="CVV code " />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:ems="10"
+        android:id="@+id/editDate"
+        android:hint="The expiry date of the credit card" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/editID"
+        android:hint="ID number" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/editLicence"
+        android:hint="Driver licence number" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BUY NOW"
+        android:onClick="buyNow"
+        android:id="@+id/buyNow" />
+
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="send a receipt to my email"
+        android:id="@+id/sendReceipt"
+        android:checked="false" />
+
 </LinearLayout>

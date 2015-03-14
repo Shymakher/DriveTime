@@ -27,7 +27,7 @@ public class CompareActivity extends ActionBarActivity {
 
     private MyAdapterInsurance myAdapterInsurance;
     private ListView listView;
-    private RelativeLayout rl;
+    RelativeLayout rl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,11 +35,17 @@ public class CompareActivity extends ActionBarActivity {
         setContentView(R.layout.activity_compare);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        for(Insurance insurance : Common.getInstance().getInsurance()){
+            System.out.println("////////////////////////////////////////////////////////////");
+            System.out.println(insurance.getBitmap() + " : " + insurance.getmInsurance());
+            System.out.println("////////////////////////////////////////////////////////////");
+        }
 
         myAdapterInsurance = new MyAdapterInsurance(getApplicationContext());
         listView = (ListView)findViewById(R.id.listView);
         listView.setAdapter(myAdapterInsurance);
-
+        listView.invalidate();
+        listView.invalidateViews();
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -90,30 +96,6 @@ public class CompareActivity extends ActionBarActivity {
     }
 
     public void help(View view){
-
-//        ParseQuery<ParseObject> query = ParseQuery.getQuery("Insurances");
-//        query.findInBackground(new FindCallback<ParseObject>() {
-//            @Override
-//            public void done(List<ParseObject> parseObjects, ParseException e) {
-//                if (e == null){
-////                    Common.getInstance().getInsurance().clear();
-//                    for(ParseObject parse : parseObjects){
-////                        company = parse.getString("InsuranceCompany");
-////                        price = parse.getString("Price");
-////                        Toast.makeText(getApplicationContext(), company + " " + price, Toast.LENGTH_SHORT).show();
-//
-//                        Common.getInstance().getInsurance().add(new Insurance(parse.getString("InsuranceCompany"), parse.getString("Price")));
-////                        victor.add(new Insurance(parse.getString("InsuranceCompany"), parse.getString("Price")));
-//                    }
-//                }else{
-//
-//                }
-//            }
-//        });
-
-//        for( insuranceqwe : Common.getInstance().getInsurance()){
-//            System.out.println(insuranceqwe);
-//        }
 
     }
 }

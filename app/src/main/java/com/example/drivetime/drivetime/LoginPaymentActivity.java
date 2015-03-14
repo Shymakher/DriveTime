@@ -4,9 +4,16 @@ import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.facebook.Session;
@@ -29,6 +36,18 @@ public class LoginPaymentActivity extends FragmentActivity {
     private UiLifecycleHelper uiHelper;
 
     String id;
+
+    EditText cardNumber;
+    EditText cvvNumber;
+    EditText dateCard;
+    EditText idNumber;
+    EditText licenceNumber;
+    CheckBox sendReceipt;
+
+    String a;
+    int keyDel;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,17 +73,17 @@ public class LoginPaymentActivity extends FragmentActivity {
                     }
 
                     ParseQuery<ParseObject> query = ParseQuery.getQuery("Person");
-                        query.getInBackground(id, new GetCallback<ParseObject>() {
-                            public void done(ParseObject gameScore, ParseException e) {
-                                if (e == null) {
-                                    // Now let's update it with some new data. In this case, only cheatMode and score
-                                    // will get sent to the Parse Cloud. playerName hasn't changed.
-                                    gameScore.put("Full_name", user.getName());
-                                    gameScore.put("Email", user.getProperty("email").toString());
-                                    gameScore.saveInBackground();
-                                }
+                    query.getInBackground(id, new GetCallback<ParseObject>() {
+                        public void done(ParseObject gameScore, ParseException e) {
+                            if (e == null) {
+                                // Now let's update it with some new data. In this case, only cheatMode and score
+                                // will get sent to the Parse Cloud. playerName hasn't changed.
+                                gameScore.put("Full_name", user.getName());
+                                gameScore.put("Email", user.getProperty("email").toString());
+                                gameScore.saveInBackground();
                             }
-                        });
+                        }
+                    });
 
 
                 } else {
@@ -72,6 +91,73 @@ public class LoginPaymentActivity extends FragmentActivity {
                 }
             }
         });
+
+/////////////////////////////////////////////////////////////////////////////////
+        cardNumber = (EditText) findViewById(R.id.editNumCard);
+        dateCard = (EditText) findViewById(R.id.editDate);
+        cvvNumber = (EditText) findViewById(R.id.editCVV);
+        idNumber = (EditText) findViewById(R.id.editID);
+        licenceNumber = (EditText) findViewById(R.id.editLicence);
+        sendReceipt = (CheckBox) findViewById(R.id.sendReceipt);
+
+        cardNumber.addTextChangedListener(new TextWatcher() {
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                boolean flag = true;
+                String eachBlock[] = cardNumber.getText().toString().split("-");
+                for (int i = 0; i < eachBlock.length; i++) {
+                    if (eachBlock[i].length() > 4) {
+                        flag = false;
+                    }
+                }
+                if (flag) {
+
+                    cardNumber.setOnKeyListener(new View.OnKeyListener() {
+
+                        @Override
+                        public boolean onKey(View v, int keyCode, KeyEvent event) {
+
+                            if (keyCode == KeyEvent.KEYCODE_DEL)
+                                keyDel = 1;
+                            return false;
+                        }
+                    });
+
+                    if (keyDel == 0) {
+
+                        if (((cardNumber.getText().length() + 1) % 5) == 0) {
+
+                            if (cardNumber.getText().toString().split("-").length <= 3) {
+                                cardNumber.setText(cardNumber.getText() + "-");
+                                cardNumber.setSelection(cardNumber.getText().length());
+                            }
+                        }
+                        a = cardNumber.getText().toString();
+                    } else {
+                        a = cardNumber.getText().toString();
+                        keyDel = 0;
+                    }
+
+                } else {
+                    cardNumber.setText(a);
+                }
+
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count,
+                                          int after) {
+                // TODO Auto-generated method stub
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
+
 
     }
 
@@ -138,6 +224,14 @@ public class LoginPaymentActivity extends FragmentActivity {
     public void onSaveInstanceState(Bundle savedState) {
         super.onSaveInstanceState(savedState);
         uiHelper.onSaveInstanceState(savedState);
+    }
+
+    public void buyNow(View view) {
+
+        startActivity(new Intent(getApplicationContext(), StartActivity.class));
+
+
+
     }
 
 }

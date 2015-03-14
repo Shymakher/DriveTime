@@ -25,4 +25,5 @@
         <item name="android:textColor">#E8E8E8</item>
         <item name="android:textSize">20sp</item>
     </style>
+    <string name="title_activity_start">StartActivity</string>
 </resources>

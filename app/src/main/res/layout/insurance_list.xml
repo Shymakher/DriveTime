@@ -9,25 +9,22 @@
         android:layout_centerHorizontal="true">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/imageView2"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginBottom="15dp"
-            />
+            android:layout_width="143dp"
+            android:layout_height="66dp"
+            android:id="@+id/imageView3"
+            android:src="@drawable/ic_launcher"
+            android:layout_weight="1.83" />
 
         <TextView
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Insurance_Company"
+            android:layout_weight="3.31"
+            android:text="Company"
             android:id="@+id/insuraceCompany"
             android:layout_alignParentTop="true"
             android:layout_alignParentStart="true"
             android:textSize="20sp"
-            android:textColor="#ffe4ecf6"
+            android:textColor="#ffffffff"
             android:textIsSelectable="false"
             android:layout_marginTop="15dp"
             android:layout_marginLeft="15dp"
@@ -36,8 +33,7 @@
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_height="50dp"
             android:text="Price"
             android:id="@+id/price"
             android:textSize="18sp"

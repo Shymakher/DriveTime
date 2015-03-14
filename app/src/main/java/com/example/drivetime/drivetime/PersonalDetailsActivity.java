@@ -5,6 +5,8 @@ import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -15,14 +17,20 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.parse.FindCallback;
+import com.parse.GetDataCallback;
+import com.parse.Parse;
 import com.parse.ParseException;
+import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
+import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
 import java.util.ArrayList;
@@ -362,7 +370,6 @@ public class PersonalDetailsActivity extends ActionBarActivity {
         } else {
             dealOffer.setEnabled(false);
         }
-
     }
 
     public void date(View view) {
@@ -433,7 +440,9 @@ public class PersonalDetailsActivity extends ActionBarActivity {
         po.put("NewDriver", newDriverParse);
         po.put("Car", carParse);
         po.put("What_using", IfPrivateParse);
+
         po.put("Insuranse_Before", insuranceBeforeParse);
+
         po.put("Claims", claimsParse);
         po.put("Police", policeParse);
         po.put("State", stateParse);
@@ -443,7 +452,7 @@ public class PersonalDetailsActivity extends ActionBarActivity {
             @Override
             public void done(ParseException e) {
                 if (e == null) {
-                    Common.getInstance().getUser().add(new User(po.getObjectId(),myDay, myMonth, myYear, myMinute, myHour, myAgeParse, newDriverParse, carParse, IfPrivateParse, insuranceBeforeParse, claimsParse, policeParse, stateParse, cityParse));
+                    Common.getInstance().getUser().add(new User(po.getObjectId(), myDay, myMonth, myYear, myMinute, myHour, myAgeParse, newDriverParse, carParse, IfPrivateParse, insuranceBeforeParse, claimsParse, policeParse, stateParse, cityParse));
                 } else {
                     Toast.makeText(getApplicationContext(), "Connection Failed", Toast.LENGTH_SHORT).show();
                     System.out.println(e.getLocalizedMessage());
@@ -451,27 +460,45 @@ public class PersonalDetailsActivity extends ActionBarActivity {
             }
         });
 
-        ParseQuery<ParseObject> query = ParseQuery.getQuery("Insurances");
-        query.findInBackground(new FindCallback<ParseObject>() {
-            @Override
-            public void done(List<ParseObject> parseObjects, ParseException e) {
-                if (e == null) {
-                    Common.getInstance().getInsurance().clear();
-                    for (ParseObject parse : parseObjects) {
-                        Common.getInstance().getInsurance().add(new Insurance(parse.getString("InsuranceCompany"), parse.getString("Price")));
+        Common.getInstance().getInsurance().clear();
+        if (Common.getInstance().getInsurance().size() == 0) {
+            ParseQuery<ParseObject> query = ParseQuery.getQuery("Insurances");
+            for (Insurance insurance : Common.getInstance().getInsurance()) {
+                query.whereEqualTo("InsuranceCompany", insurance.getmObjectId());
+            }
+            query.findInBackground(new FindCallback<ParseObject>() {
+                @Override
+                public void done(List<ParseObject> list, ParseException e) {
+                    if (e == null) {
+
+                        for (final ParseObject parse : list) {
+                            ParseFile imageFile = (ParseFile) parse.get("image");
+                            if (imageFile != null) {
+                                imageFile.getDataInBackground(new GetDataCallback() {
+                                    public void done(byte[] data, ParseException e) {
+                                        if (e == null) {
+                                            Bitmap bmp = BitmapFactory
+                                                    .decodeByteArray(
+                                                            data, 0,
+                                                            data.length);
+                                            Common.getInstance().getInsurance().add(new Insurance(parse.getObjectId(), bmp, parse.getString("InsuranceCompany"), parse.getString("Price")));
+                                        } else {
+                                            Toast.makeText(getApplicationContext(), "Connection Failed 1", Toast.LENGTH_SHORT).show();
+                                        }
+                                    }
+                                });
+                            }
+                        }
+//                    Intent intent = new Intent(getApplicationContext(), CompareActivity.class);
+//                    startActivity(intent);
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Connection Failed 2", Toast.LENGTH_SHORT).show();
                     }
                     Intent intent = new Intent(getApplicationContext(), CompareActivity.class);
                     startActivity(intent);
-                } else {
-                    Toast.makeText(getApplicationContext(), "Connection Failed", Toast.LENGTH_SHORT).show();
+                    mPd.cancel();
                 }
-                mPd.cancel();
-
-            }
-
-
-        });
-
+            });
+        }
     }
-
 }
